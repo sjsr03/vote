@@ -7,7 +7,6 @@ router.get('/', function (req, res, next) {
 })
 
 router.post('/', function (req, res, next) {
-    console.log(req.body);
     const college = req.body.college;
     const major = req.body.major;
     const candidate = req.body.candidate;
@@ -52,7 +51,7 @@ router.post('/', function (req, res, next) {
 
                 for (let i = 0; i < candidate.length; i++) {
                     const candi = {
-                        vote_code: req.body.vote_code,
+                        vote_code: result.insertId,
                         candidate: candidate[i],
                         poll: 0,
                     };
