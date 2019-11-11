@@ -12,6 +12,7 @@ const registRouter = require('./routes/regist');
 const listRouter = require('./routes/list');
 const ongoingRouter = require('./routes/ongoing');
 const voteRouter = require('./routes/vote');
+const deleteRouter = require('./routes/delete');
 const resultRouter = require('./routes/result');
 const logoutRouter = require('./routes/logout');
 
@@ -59,6 +60,7 @@ app.use('/login',loginRouter);
 app.use('/regist',registRouter);
 app.use('/ongoing',ongoingRouter);
 app.use('/vote',voteRouter);
+app.use('/vote/delete',deleteRouter);
 app.use('/result',resultRouter);
 app.use('/logout',logoutRouter);
 

@@ -47,6 +47,9 @@
         <th>시작시간</th>
         <th>마감시간</th>
         <th>진행상황</th>
+        <% if(sessionUser === 'admin'){%>
+          <th>삭제</th>
+        <%}%>
       </tr>
       <%
         for(var i=0; i<rows.length ;i++)
@@ -63,6 +66,16 @@
             <td><%=rows[i].vote_state%></td>
           <% 
           }%>
+        <% if(sessionUser === 'admin'){%>
+          <td>
+            <%if (rows[i].vote_state ==='시작전') {%>
+              <form onsubmit="return confirm('정말 삭제하시겠습니까?');"  action="/vote/delete" method="post">
+                <input type="hidden" name="voteCode" value="<%=rows[i].vote_code%>">
+                <button>삭제</button>
+              </form>
+            <%}%>
+          </td>
+        <%}%>
       </tr>
       <%}%>
     </table>
