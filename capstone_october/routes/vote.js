@@ -17,8 +17,11 @@ router.post('/', function (req, res, next) {//투표 결과 처리
 
 router.get('/', function (req, res, next) {//투표 폼으로
     const voteCode = req.query.voteCode;
+    console.log({voteCode});
+    console.log(req.user.auth_code);
 
-    conn.query("select idx,candidate,poll, auth_code from vote_detail where vote_code=?", [voteCode], function (err, results) {
+    const sql = "select authorization_code as auth_code from vote where vote_code = ?";
+    conn.query(sql, [voteCode], function (err, results) {
         if (err) console.log(err)
         const auth = results[0].auth_code;
         // req.user.user_id
