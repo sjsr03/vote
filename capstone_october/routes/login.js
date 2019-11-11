@@ -1,19 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const cookieParser = require('cookie-parser');
-
-const session = require('express-session');
-const MySQLStore = require('express-mysql-session')(session);
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const mysql = require('mysql');
 const conn = require("../connection");
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-        if (!req.user) {
+    console.log(222);
+    if (!req.user) {
             res.render('login', {title: 'login'});
         } else {
             res.redirect('/list');
