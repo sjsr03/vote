@@ -45,7 +45,7 @@
     <form action="/vote" method="post" >
     <% for(var i =0; i<rows.length; i++) 
     {%>
-        <input type="radio" name="selectedCandidate" value="<%=rows[i].idx%>"> <%= rows[i].idx%>. <%= rows[i].candidate%>
+        <input type="radio" name="selectedCandidate" value="<%=rows[i].idx%>"> <%=i+1%>. <%= rows[i].candidate%>
         <br>
     <%
     }%>

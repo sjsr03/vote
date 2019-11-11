@@ -20,7 +20,9 @@ router.get('/', function (req, res, next) {//투표 폼으로
     console.log({voteCode});
     console.log(req.user.auth_code);
 
-    const sql = "select authorization_code as auth_code from vote where vote_code = ?";
+    const sql = `
+    SELECT idx, candidate, poll, v.authorization_code as auth_code FROM vote_detail vd JOIN vote v ON vd.vote_code = v.vote_code WHERE vd.vote_code = 10;
+    `;
     conn.query(sql, [voteCode], function (err, results) {
         if (err) console.log(err)
         const auth = results[0].auth_code;
