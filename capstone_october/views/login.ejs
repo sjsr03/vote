@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <% include ./head %>
+  </head>
+  <body><br><br><br><br><br><br><br><br><br><br>
+    <h1 style="text-align: center;"><%= title %></h1>
+    <div style="text-align: center;">
+    <form action= '/login' method="post">
+    <label>학번 <input type=text name="username"> </label><br>
+    <label>비밀번호 <input type="text" name="password"></label><br>
+    <input type="submit" value="로그인">
+    </form>
+  </div>
+  </body>
+</html>
