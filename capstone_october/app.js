@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+require('./extension');
 
 
 //var indexRouter = require('./routes/index');
@@ -42,7 +43,7 @@ app.use(session({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: process.env.DB_PASSWORD || '32167352',
+    password: process.env.DB_PASSWORD || 'dsc55031##',
     database:'voting'
   })//cookie secure? 
 
@@ -80,5 +81,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.use(express.static(__dirname + '/public'));
 
 module.exports = app;

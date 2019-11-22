@@ -5,6 +5,7 @@ const conn = require("../connection");
 
 router.post('/', function (req, res, next) {//투표 결과 처리
     console.log(req.body.selectedCandidate);
+    console.log(req.body);
 
     conn.query("update vote_detail set poll=poll+1 where idx=?", [req.body.selectedCandidate], function (err, results) {
         if (err) console.log(err);
@@ -18,7 +19,7 @@ router.post('/', function (req, res, next) {//투표 결과 처리
 router.get('/', function (req, res, next) {//투표 폼으로
     const voteCode = req.query.voteCode;
     const sql = `
-    SELECT idx, candidate, poll, v.authorization_code as auth_code FROM vote_detail vd JOIN vote v ON vd.vote_code = v.vote_code WHERE vd.vote_code = 10;
+    SELECT idx, candidate, poll, v.authorization_code as auth_code FROM vote_detail vd JOIN vote v ON vd.vote_code = v.vote_code WHERE vd.vote_code = ${voteCode};
     `;
     conn.query(sql, [voteCode], function (err, results) {
         if (err) console.log(err)

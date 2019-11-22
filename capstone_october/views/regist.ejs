@@ -1,147 +1,173 @@
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <% include ./head %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ./head %>
+    <link rel="stylesheet" href="css\styles.css"/>
     <script>
 
-        function itemchange(){
+        function itemchange() {
             var college = document.getElementById("college");
             //college.options[college.selectedIndex].text  셀렉트박스 옵션사이 텍스트값
             var selectItem = college.options[college.selectedIndex].value //셀렉트 박스 value값
-            
-            var 문과대학 = ['전체','국어국문학과','사학과','철학과','영미인문학과','중어중문학과',
-                            '일어일문학과','영어영문학과'];
+
+            var 문과대학 = ['전체', '국어국문학과', '사학과', '철학과', '영미인문학과', '중어중문학과',
+                '일어일문학과', '영어영문학과'];
             var 법과대학 = ['법학과'];
-            var 사회과학대학 = ['전체','정치외교학과','행정학과','도시계획부동산학부','커뮤니케이션학부',
-                            '광고홍보전공','응용통계학과','상담학과'];
-            var 상경대학= ['전체','경제학과','무역학과','경영학부','마이스터경영학과'];
-            var 건축대학 = ['전체','건축학과','건축공학과']
-            var 공과대학 =['전체','전자전기공학과','고분자공학과','파이버시스템공학과','소프트웨어학과',
-                            '응용컴퓨터공학과','토목환경공학과','기계공학과','화학공학과'];
-            var sw융합대학=['전체','소프트웨어학과','응용컴퓨터공학과','모바일시스템공학과'];
-            var 사범대학 = ['전체','한문교육과','특수교육과','초등특수교육과','중등특수교육과','수학교육과',
-                                    '과학교육과','체육교육과'];
-            var 예술디자인대학 = ['전체','도예과','커뮤니케이션디자인학과','연극전공','영화전공','뮤지컬전공','패션산업디자인과','무용과'];
-            var 음악대학=['전체','기악과','성악과','작곡과','국악과','피아노과','관현악과'];
-            var 국제대학= ['전체','국제경영학과','모바일시스템공학과','국제자유전공학부'];
-            var 자연과학대학 =['전체','화학과','분자생물학과'];
-            
+            var 사회과학대학 = ['전체', '정치외교학과', '행정학과', '도시계획부동산학부', '커뮤니케이션학부',
+                '광고홍보전공', '응용통계학과', '상담학과'];
+            var 상경대학 = ['전체', '경제학과', '무역학과', '경영학부', '마이스터경영학과'];
+            var 건축대학 = ['전체', '건축학과', '건축공학과']
+            var 공과대학 = ['전체', '전자전기공학과', '고분자공학과', '파이버시스템공학과', '소프트웨어학과',
+                '응용컴퓨터공학과', '토목환경공학과', '기계공학과', '화학공학과'];
+            var sw융합대학 = ['전체', '소프트웨어학과', '응용컴퓨터공학과', '모바일시스템공학과'];
+            var 사범대학 = ['전체', '한문교육과', '특수교육과', '초등특수교육과', '중등특수교육과', '수학교육과',
+                '과학교육과', '체육교육과'];
+            var 예술디자인대학 = ['전체', '도예과', '커뮤니케이션디자인학과', '연극전공', '영화전공', '뮤지컬전공', '패션산업디자인과', '무용과'];
+            var 음악대학 = ['전체', '기악과', '성악과', '작곡과', '국악과', '피아노과', '관현악과'];
+            var 국제대학 = ['전체', '국제경영학과', '모바일시스템공학과', '국제자유전공학부'];
+            var 자연과학대학 = ['전체', '화학과', '분자생물학과'];
+
             var changeItem;
-            if(selectItem== "문과대학"){
+            if (selectItem == "문과대학") {
                 changeItem = 문과대학;
-            }else if(selectItem== "법과대학"){
+            } else if (selectItem == "법과대학") {
                 changeItem = 법과대학;
-            }else if(selectItem== "사회과학대학"){
+            } else if (selectItem == "사회과학대학") {
                 changeItem = 사회과학대학;
-            } else if(selectItem== "상경대학"){
+            } else if (selectItem == "상경대학") {
                 changeItem = 상경대학;
-            }else if(selectItem== "건축대학"){
+            } else if (selectItem == "건축대학") {
                 changeItem = 건축대학;
-            } else if(selectItem== "공과대학"){
+            } else if (selectItem == "공과대학") {
                 changeItem = 공과대학;
-            }else if(selectItem== "sw융합대학"){
+            } else if (selectItem == "sw융합대학") {
                 changeItem = sw융합대학;
-            }else if(selectItem== "사범대학"){
+            } else if (selectItem == "사범대학") {
                 changeItem = 사범대학;
-            }else if(selectItem== "예술디자인대학"){
+            } else if (selectItem == "예술디자인대학") {
                 changeItem = 예술디자인대학;
-            }else if(selectItem== "음악대학"){
+            } else if (selectItem == "음악대학") {
                 changeItem = 음악대학;
-            }else if(selectItem== "국제대학"){
+            } else if (selectItem == "국제대학") {
                 changeItem = 국제대학;
-            }else if(selectItem== "자연과학대학"){
+            } else if (selectItem == "자연과학대학") {
                 changeItem = 자연과학대학;
             }
             console.log(changeItem);
 
             document.getElementById("major").innerHTML = '';//내부 비우기
 
-            for (var count=0; count <changeItem.length; count++){
+            for (var count = 0; count < changeItem.length; count++) {
                 console.log(changeItem.length);
                 var option = document.createElement('option');//태그생성
                 var text = document.createTextNode(changeItem[count]);
                 option.appendChild(text);
                 document.getElementById('major').appendChild(option);
-            }    
+            }
         }
 
-        function CreateTextBox(){
-        document.getElementById("txtPanel").innerHTML="후보자의 이름을 입력하세요 <br>";
+        function CreateTextBox() {
+            document.getElementById("txtPanel").innerHTML = "<label>후보자의 이름을 입력하세요</label><br/>";
             var count = document.getElementById('txtCount').value;
-                for(i=0; i<count ;i++){
-                    var txt ="<input type='text' name='candidate' size='10'/><br>";
+            for (i = 0; i < count; i++) {
+                var txt = "<input type='text' name='candidate' size='10' class='form-control'/><br>";
 
-                    document.getElementById('txtPanel').innerHTML +=txt;
-                    console.log("ok");
-                }
+                document.getElementById('txtPanel').innerHTML += txt;
+                console.log("ok");
+            }
 
-            }      
-    
+        }
+
     </script>
 </head>
 <body>
-        <nav class="navbar navbar-default">
-                <div class="container">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand">단국대 투표</div>
-                  </div>
-                  <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                      <li><a href="/list">투표목록</a></li>
-                      <li><a href="/ongoing">진행중인 선거</a></li>
-                      <% if(sessionUser === 'admin'){%>
-                      <li><a href="/regist">선거 등록</a></li>
-                      <li><a href="/edit">선거 수정</a></li>
-                      <%}%>
-                      <% if(sessionUser){%>
-                        <li><a href="/users">내정보</a></li>
-                        <li><a href="/logout">로그아웃</a></li>
-                        <%}%>
-                      <li></li>
-                    </ul>
-                  </div>
+
+<% include ./nav.ejs %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-sm-7 col-xs-10">
+            <h1 class="page-header">선거등록</h1>
+            <form role="form" action="/regist" method="post">
+                <div class="form-group">
+                    <label for="vote_name">선거명</label>
+                    <input type='text' name='vote_name' class="form-control" id="vote_name" placeholder="2020 총학생회 선거">
                 </div>
-              </nav>
-    <br><br>
-    <h1 style="text-align: center;">선거등록</h1>
-    <br><br><br><br>
-    <div style="text-align: center;">
-    <form action ="/regist" method="post">
-    <label >선거명 <input type='text' name='vote_name'></label><br>
-    <label >시작시간 <input type='datetime-local' name='start_time'></label><br>
-    <label >마감시간 <input type='datetime-local' name='end_time'></label><br>
-    <label >단과대학 
-        <select id='college' name='college' onchange="itemchange()">
-            <option value='전체'>전체</option>
-            <option value='문과대학'>문과대학</option>
-            <option value='법과대학'>법과대학</option>
-            <option value='사회과학대학'>사회과학대학</option>
-            <option value='상경대학'>상경대학</option>
-            <option value='건축대학'>건축대학</option>
-            <option value='공과대학'>공과대학</option>
-            <option value='sw융합대학'>sw융합대학</option>
-            <option value='사범대학'>사범대학</option>
-            <option value='예술디자인대학'>예술디자인대학</option>
-            <option value='음악대학'>음악대학</option>
-            <option value='국제대학'>국제대학</option>
-            <option value='자연과학대학'>자연과학대학</option>
-        </select>
-    </label><br>
-    <label>학과 <select id='major' name='major'></select></label><br>
-    <label>등록할 후보자의 수를 선택해주세요  <input type='text' id='txtCount' size='5' style='text-align: right;'>
-    <input type="button" value="확인" onclick ='CreateTextBox()'></label><br>
-    <div id="txtPanel"></div>
-    <input type='submit' value="등록">
-    </form>
+                <div class="form-group">
+                    <label for="start_time">시작시간</label>
+                    <input type='datetime-local' name='start_time' class="form-control" id="start_time">
+                </div>
+                <div class="form-group">
+                    <label for="end_time">마감시간</label>
+                    <input type='datetime-local' name='end_time' class="form-control" id="end_time">
+                </div>
+                <div class="form-group">
+                    <label for="college">단과대학</label>
+                    <select id='college' name='college' onchange="itemchange()" class="form-control">
+                        <option value='전체'>전체</option>
+                        <option value='문과대학'>문과대학</option>
+                        <option value='법과대학'>법과대학</option>
+                        <option value='사회과학대학'>사회과학대학</option>
+                        <option value='상경대학'>상경대학</option>
+                        <option value='건축대학'>건축대학</option>
+                        <option value='공과대학'>공과대학</option>
+                        <option value='sw융합대학'>sw융합대학</option>
+                        <option value='사범대학'>사범대학</option>
+                        <option value='예술디자인대학'>예술디자인대학</option>
+                        <option value='음악대학'>음악대학</option>
+                        <option value='국제대학'>국제대학</option>
+                        <option value='자연과학대학'>자연과학대학</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="major">학과 </label>
+                    <select id='major' name='major' class="form-control"></select>
+                </div>
+                <div class="form-group">
+                    <label for="txtCount">등록할 후보자의 수를 선택해주세요</label>
+                    <input type='number' id='txtCount' size='5' style='text-align: right;' class="form-control">
+                    <button type="button" onclick='CreateTextBox()' class="btn btn-default">확인</button>
+                    <div id="txtPanel"></div>
+                </div>
+
+                <button type="submit" class="btn btn-default">등록</button>
+            </form>
+        </div>
+    </div>
 </div>
-    
+
+<!--<h1 style="text-align: center;">선거등록</h1>-->
+<!--<br><br><br><br>-->
+<!--<div style="text-align: center;">-->
+
+<!--    <form action="/regist" method="post">-->
+<!--        <label>선거명 <input type='text' name='vote_name'></label><br>-->
+<!--        <label>시작시간 <input type='datetime-local' name='start_time'></label><br>-->
+<!--        <label>마감시간 <input type='datetime-local' name='end_time'></label><br>-->
+<!--        <label>단과대학-->
+<!--            <select id='college' name='college' onchange="itemchange()">-->
+<!--                <option value='전체'>전체</option>-->
+<!--                <option value='문과대학'>문과대학</option>-->
+<!--                <option value='법과대학'>법과대학</option>-->
+<!--                <option value='사회과학대학'>사회과학대학</option>-->
+<!--                <option value='상경대학'>상경대학</option>-->
+<!--                <option value='건축대학'>건축대학</option>-->
+<!--                <option value='공과대학'>공과대학</option>-->
+<!--                <option value='sw융합대학'>sw융합대학</option>-->
+<!--                <option value='사범대학'>사범대학</option>-->
+<!--                <option value='예술디자인대학'>예술디자인대학</option>-->
+<!--                <option value='음악대학'>음악대학</option>-->
+<!--                <option value='국제대학'>국제대학</option>-->
+<!--                <option value='자연과학대학'>자연과학대학</option>-->
+<!--            </select>-->
+<!--        </label><br>-->
+<!--        <label>학과 <select id='major' name='major'></select></label><br>-->
+<!--        <label>등록할 후보자의 수를 선택해주세요 <input type='text' id='txtCount' size='5' style='text-align: right;'>-->
+<!--            <input type="button" value="확인" onclick='CreateTextBox()'></label><br>-->
+<!--        <div id="txtPanel"></div>-->
+<!--        <input type='submit' value="등록">-->
+<!--    </form>-->
+<!--</div>-->
 </body>
 </html>
