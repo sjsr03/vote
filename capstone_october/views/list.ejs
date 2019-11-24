@@ -18,8 +18,6 @@
             <tr>
                 <th>번호</th>
                 <th>선거명</th>
-                <th>시작시간</th>
-                <th>마감시간</th>
                 <th>진행상황</th>
             </tr>
             </thead>
@@ -30,9 +28,16 @@
             %>
                 <tr>
                     <td><%= rows[i].vote_code %></td>
-                    <td><%= rows[i].vote_name %></td>
-                    <td><%= rows[i].vote_starttime %></td>
-                    <td><%= rows[i].vote_endtime %></td>
+                    <td>
+                        <button type="button" class="btn btn-default" data-container="body" data-toggle="popover"
+                                data-placement="top"
+                                data-html="true"
+                                data-content="<%= rows[i].vote_starttime %> <br/> ~ <%= rows[i].vote_endtime %>">
+                            <%= rows[i].vote_name %>
+                        </button>
+
+
+                    </td>
                     <% if ( rows[i].vote_state === '마감'){ %>
                         <td>
                             <a href="/result?voteCode=<%= rows[i].vote_code %>&voteName=<%= rows[i].vote_name %>"><%= rows[i].vote_state %></a>
@@ -58,5 +63,10 @@
     </div>
 </div>
 
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
 </body>
 </html>

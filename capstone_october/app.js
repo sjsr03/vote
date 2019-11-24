@@ -15,6 +15,7 @@ const ongoingRouter = require('./routes/ongoing');
 const voteRouter = require('./routes/vote');
 const deleteRouter = require('./routes/delete');
 const resultRouter = require('./routes/result');
+const mypageRouter = require('./routes/mypage');
 const logoutRouter = require('./routes/logout');
 
 const app = express();
@@ -63,6 +64,7 @@ app.use('/ongoing',ongoingRouter);
 app.use('/vote',voteRouter);
 app.use('/vote/delete',deleteRouter);
 app.use('/result',resultRouter);
+app.use('/mypage',mypageRouter);
 app.use('/logout',logoutRouter);
 
 

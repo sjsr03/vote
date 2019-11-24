@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include ./head.ejs %>
+</head>
+<body>
+
+<% include ./nav.ejs %>
+<div class="container">
+
+    <h1 class="page-header">내 정보</h1>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">ID</h3>
+        </div>
+        <div class="panel-body">
+            <%= user.id %>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">단과대학</h3>
+        </div>
+        <div class="panel-body">
+            <%= user.college %>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">전공</h3>
+        </div>
+        <div class="panel-body">
+            <%= user.major %>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
