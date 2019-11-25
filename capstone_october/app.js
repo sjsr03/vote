@@ -17,6 +17,7 @@ const deleteRouter = require('./routes/delete');
 const resultRouter = require('./routes/result');
 const mypageRouter = require('./routes/mypage');
 const logoutRouter = require('./routes/logout');
+const sendRouter = require('./routes/send');
 
 const app = express();
 
@@ -66,7 +67,7 @@ app.use('/vote/delete',deleteRouter);
 app.use('/result',resultRouter);
 app.use('/mypage',mypageRouter);
 app.use('/logout',logoutRouter);
-
+app.use('/vote/send',sendRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

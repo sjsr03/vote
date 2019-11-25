@@ -19,6 +19,7 @@
                 <th>번호</th>
                 <th>선거명</th>
                 <th>진행상황</th>
+
             </tr>
             </thead>
             <tbody>
@@ -49,12 +50,20 @@
                     <% if(sessionUser === 'admin'){ %>
                         <td>
                             <% if (rows[i].vote_state === '시작전') { %>
-                                <form onsubmit="return confirm('정말 삭제하시겠습니까?');" action="/vote/delete" method="post">
+                                <form onsubmit="return confirm('정말 삭제 하시겠습니까?');" action="/vote/delete" method="post">
                                     <input type="hidden" name="voteCode" value="<%= rows[i].vote_code %>">
                                     <button>삭제</button>
                                 </form>
                             <% } %>
                         </td>
+                    <td>
+                        <% if (rows[i].vote_state === '시작전') { %>
+                        <form onsubmit="return confirm('문자를 발송 하시겠습니까?');" action="/vote/send" method="post">
+                            <input type="hidden" name="vote_auth_code" value="<%=rows[i].authorization_code%>">
+                            <button>발송</button>
+                        </form>
+                        <% } %>
+                    </td>
                     <% } %>
                 </tr>
             <% } %>
