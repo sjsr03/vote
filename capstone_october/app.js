@@ -45,7 +45,7 @@ app.use(session({
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: process.env.DB_PASSWORD || 'dsc55031##',
+    password: process.env.DB_PASSWORD || '32167352',
     database:'voting'
   })//cookie secure? 
 

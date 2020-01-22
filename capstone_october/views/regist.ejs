@@ -11,6 +11,7 @@
             var college = document.getElementById("college");
             //college.options[college.selectedIndex].text  셀렉트박스 옵션사이 텍스트값
             var selectItem = college.options[college.selectedIndex].value //셀렉트 박스 value값
+            var 전체 = ['전체'];
 
             var 문과대학 = ['전체', '국어국문학과', '사학과', '철학과', '영미인문학과', '중어중문학과',
                 '일어일문학과', '영어영문학과'];
@@ -54,6 +55,8 @@
                 changeItem = 국제대학;
             } else if (selectItem == "자연과학대학") {
                 changeItem = 자연과학대학;
+            } else if (selectItem = "전체"){
+                changeItem = 전체;
             }
             console.log(changeItem);
 
